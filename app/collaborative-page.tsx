@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Excalidraw } from "@excalidraw/excalidraw";
-import type { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types/types";
+// Type import - using any for now since the types path may vary
+type ExcalidrawImperativeAPI = any;
 import { io, Socket } from "socket.io-client";
 import "@excalidraw/excalidraw/index.css";
 

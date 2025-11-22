@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from "react";
-import type { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types/types";
 import ExcalidrawWrapper from "./components/ExcalidrawWrapper";
+
+// Type definition for Excalidraw API
+type ExcalidrawImperativeAPI = any;
 
 export default function Home() {
   const [excalidrawAPI, setExcalidrawAPI] = useState<ExcalidrawImperativeAPI | null>(null);
@@ -80,7 +82,7 @@ export default function Home() {
       {/* Excalidraw Component */}
       <div style={{ flex: 1, position: "relative" }}>
         <ExcalidrawWrapper
-          excalidrawAPI={(api) => setExcalidrawAPI(api)}
+          excalidrawAPI={(api: ExcalidrawImperativeAPI) => setExcalidrawAPI(api)}
           onChange={handleChange}
           theme={theme}
           UIOptions={{
